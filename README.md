@@ -1,5 +1,5 @@
 ## Supervised Tasks
-In supervised tasks models are created to establish a relationship between a number of independent variables (often called features), and a dependent variable. If the dependent variable is continuous, then it is defines a regression problem. If the dependent variable is categorical, then it is defined as a classification problem.
+In supervised tasks models are created to establish a relationship between a number of independent variables (often called features), and a dependent variable. If the dependent variable is continuous, then it is defines a regression problem. If the dependent variable is categorical, then it is defines as a classification problem.
 
 ## Purpose
 The purpose is to provide a brief demonstration of common machine learning models. The purpose is not on complex feature engineering, data preprocessing, or hyperparameter tuning. To that end a very simple data set was chosen, and models are only lightly tuned.
@@ -36,11 +36,20 @@ The purpose is to provide a brief demonstration of common machine learning model
 
 **Advantages/Disadvantages**: The advantages are the same as a decision tree (highly flexible model, limited preprocessing, very little assumptions), however we have reduced variance, reduced noise, and reduced the chance of over-fitting (whilst keeping bias the same). The disadvantages are that random forrests can still overfit data, the model becomes less interpretable, and it can be computationally intensive.
 
+## 7_Gradient_Boost
+**Approach**: Gradient Boosting is a *boosting* approach which builds a series of 'weak learners', with each weak learner trying to improve upon the previous mistakes. A loss function is used to create decision trees that minimize the errors generated from the previous weak learner. In gradient descent algorithms a loss function is minimized by taking steps in an appropriate direction. The same process is being applied here, we start off with a poor model with generates very high errors, and we keep building additional models to reduce these errors. Predictions are made by aggregating all these models together.
 
+**Advantages/Disadvantages**: Decision trees are commonly use as the 'weak learners'. Decision trees are simple to build, are very flexible, and robust to outliers / different scales. Gradient Boosting often achieves good results, as successive models build on weakness of previous ones. Furthermore, combining lots of weak learners helps to reduce variance / overfitting.
 
+## 8_Ada_Boost
+**Approach**: Ada Boost also builds a series of weak learners, with each weak learner trying to improve upon previous mistakes. Each data point is given a weight, with the misclassified data points given higher weights, and correctly classified data points given lower weights. The data points and weights are then used to build new weak learners. The weak learners are aggregated when a prediction needs to be made. Decision trees (or decision stumps) are commonly used as weak learners.
 
+## 9_XGBoost
+**Advantages/Disadvantages**: The advantages similar to decision trees (highly flexible model, limited preprocessing, very little assumptions), however we have reduced variance, reduced noise, and reduced the chance of over-fitting (whilst keeping bias the same). It is easy to implement, works well with a wide range of classifiers, and no parameters to adjust. Ada Boost is sensitive to noise and outliers because it works hard to correctly classify misclassified data points.
 
+**Approach**: XGBoost improves upon other boosting methods by adding regularization / pruning techniques. It is effectively a regularised form of gradient boosting, but with software engineering enhancements that meaningfully improve computation time. XGboost uses decisions trees as 'weak learners'. When constructing decision trees, splits are pruned if the 'gain in information' is below a threshold. The threshold, and the gain are regularization hyperparameters which can be specified in order to control the size of decision trees. The errors (residuals) from a weak leaner are used by the next weak leaner to improve the classifier.
 
+**Advantages/Disadvantages**: The advantages are the same as gradient boost but XGBoost has the added advantage of enchanced regularization. System optimizations include parallelization, and algorithm choices that make efficient use of resources. 
 
 
 
