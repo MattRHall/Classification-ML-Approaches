@@ -1,5 +1,5 @@
 ## Supervised Tasks
-In supervised tasks models are created to establish a relationship between a number of independent variables (often called features), and a dependent variable. If the dependent variable is continuous, then it is defines a regression problem. If the dependent variable is categorical, then it is defines as a classification problem.
+In supervised tasks models are created to establish a relationship between a number of independent variables (often called features), and a dependent variable. If the dependent variable is continuous, then it defines a regression problem. If the dependent variable is categorical, then it defines as a classification problem.
 
 ## Purpose
 The purpose is to provide a brief demonstration of common machine learning models. The purpose is not on complex feature engineering, data preprocessing, or hyperparameter tuning. To that end a very simple data set was chosen, and models are only lightly tuned.
@@ -56,7 +56,7 @@ The purpose is to provide a brief demonstration of common machine learning model
 
 **Advantages/Disadvantages**: Linear regression is straight forward to compute, and easy to understand. Features can be pruned if their coefficients are not significant. The disadvantages are based around the assumptions it makes around the underlying data (linearity, random sampling, no perfect multicollinearity, normality) and the residuals (constant variance, no autocorrelation).
 
-## 9_Lasso_Regression (Regression)
+## 11_Lasso_Regression (Regression)
 **Approach**: Linear regression without regularization uses ordinary least squared (OLS), which is the squared sum of the residuals (actual values - predicted) as its cost to minimize. Lasso regression adds an extra penalty; the sum of the absolute values of the parameters. The optimisation processes tries to improve the predictive ability of the model, whilst also trying to keep coefficients as low as possible. A penalty parameter can be tuned to change how much high coefficients are penalized.
 
 **Advantages/Disadvantages**: One feature of Lasso regression is that it has the ability to force coefficients towards 0. This means the Lasso regression performs feature selection which can be useful. The ability to tune the sensitivity to the regularization parameter means regualarization can be controlled. Lasso regression has the same advantages as linear regression (simplicity, understandability, complexity), and the same disadvantages (lots of assumptions).
